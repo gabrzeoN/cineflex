@@ -5,3 +5,7 @@
     --correct-answer-2: #FF922E;
     --wrong-answer: #FF3030; */
 }
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
