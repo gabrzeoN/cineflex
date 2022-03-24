@@ -1,5 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import "./../assets/css/reset.css";
+import "./../assets/css/style.css";
+
 import Header from "./Header.jsx";
 import Movie from "./Movie.jsx";
 import Time from "./Time.jsx";
