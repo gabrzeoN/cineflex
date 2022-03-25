@@ -1,23 +1,21 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Header from "./Header.jsx";
-import Movie from "./Movie.jsx";
-import Session from "./Session.jsx";
-import Seats from "./Seats.jsx";
-import Success from "./Success.jsx";
+import Header from "./Header";
+import Movies from "./Movies";
+import Sessions from "./Sessions";
+import Seats from "./Seats";
+import Success from "./Success";
 
 export default function App(){
     return (
         <BrowserRouter>
             <Header />
-            <main>
                 <Routes>
-                    <Route path="/" element={<Movie />} ></Route>
-                    <Route path="/filme/:idFilme" element={<Session />} ></Route>
+                    <Route path="/" element={<Movies />} ></Route>
+                    <Route path="/filme/:idFilme" element={<Sessions />} ></Route>
                     <Route path="/sessao/:idFilme" element={<Seats />} ></Route>
                     <Route path="/sucesso" element={<Success />} ></Route>
                 </Routes>
-            </main>
         </BrowserRouter>
     );
 }
