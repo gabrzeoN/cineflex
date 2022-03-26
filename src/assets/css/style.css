@@ -1,9 +1,25 @@
 *{
     box-sizing: border-box;
-    --main-background: rgb(255, 255, 255);
-    --main-font: #293845;
+    
+    /* Header */
     --header-backgroud: #C3CFD9;
     --header-font: #E8833A;
+
+    /* All main */
+    --main-background: rgb(255, 255, 255);
+    --main-font: #293845;
+
+    /* Session main*/
+    --time-font: white;
+    --time-button:  #E8833A;
+    --time-button-hover: #da7a36;
+
+    /* Seats main*/
+
+    /* Footer */
+    --footer-background: #E5E5E5;
+    --footer-img: white;
+    --footer-font: #293845;
 }
 
 body{
@@ -12,5 +28,6 @@ body{
 }
 
 main{
-    margin: 100px 0px;
+    margin-top: 100px;
+    margin-bottom: 120px;
 }

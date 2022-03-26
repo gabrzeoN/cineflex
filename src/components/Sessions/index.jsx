@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import {  Link, useParams } from "react-router-dom";
 
 import Footer from "./../Footer";
+import "./style.css";
 
 export default function Sessions(){
     const { idFilme } = useParams();
@@ -26,7 +27,7 @@ export default function Sessions(){
             },
         ]
     });
-    const {id, title, posterURL} = movie;
+    // const {id, title, posterURL} = movie;
     // const {}
 
     useEffect(() => {
@@ -39,27 +40,26 @@ export default function Sessions(){
         .catch((error) => console.log("Error " + error.response.status));
     }, []);
 
-    
-    // movie.days[0].showtimes.push({name: "199", id: 24})
     return (
         <>
-            <main>
-                <h1>Selecione o horário</h1>
-
+            <main className="Sessions">
+                <h2>Selecione o horário</h2>
                 {
                     movie.days.map(day => {
                         return (
-                            <div key={day.id} className="sessions" >
+                            <div key={day.id} className="day" >
                                 <p>{day.weekday} - {day.date}</p>
-                                {
-                                    day.showtimes.map(time => {
-                                        return (
-                                            <Link key={time.id} to="" >
-                                                    <button>{time.name}</button>
-                                            </Link>
-                                        )
-                                    })
-                                }
+                                <div className="times">
+                                    {
+                                        day.showtimes.map(time => {
+                                            return (
+                                                <Link key={time.id} to="" >
+                                                        <button>{time.name}</button>
+                                                </Link>
+                                            )
+                                        })
+                                    }
+                                </div>
                             </div>
                         );
                         

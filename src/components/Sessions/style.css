@@ -1,0 +1,48 @@
+.Sessions h2{
+    font-size: 24px;
+    margin: 40px 0px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.04em;
+    color: var(--main-font);
+}
+
+.Sessions .day{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px 0px;
+    padding: 0px 24px;
+}
+
+.Sessions .day p{
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.02em;
+    color: var(--main-font);
+}
+
+.Sessions .times{
+    display:  flex;
+}
+
+.Sessions .times button{
+    width: 83px;
+    height: 43px;
+    background: var(--time-button);
+    border-radius: 3px;
+    border: 0px;
+
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.02em;
+    color: var(--time-font);
+    margin: 23px 0px;
+    margin-right: 10px;
+}
+
+.Sessions .times button:hover{
+    background: var(--time-button-hover);
+}

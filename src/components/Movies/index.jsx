@@ -22,7 +22,7 @@ export default function Movies(){
                     {
                         movies.map(({id, title, posterURL}) => {
                             return (
-                                <Link key={id} to={`/filme/${id}`} >
+                                <Link key={id} to={`/sessoes/${id}`} >
                                     <article className="movie">
                                         <img src={posterURL} alt={title} />  
                                     </article>
