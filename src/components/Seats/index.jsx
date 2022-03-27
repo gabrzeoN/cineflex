@@ -2,12 +2,12 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
+import Seat from "../Seat";
 import Footer from "../Footer";
 import "./style.css";
 
 export default function Seats() {
     const { idSessao } = useParams();
-    console.log(idSessao);
 
     const [session, setSession] = useState({
         id: 0,
@@ -33,25 +33,15 @@ export default function Seats() {
         ]
     });
 
-    
     useEffect(() => {
         axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/showtimes/${idSessao}/seats`)
         .then((response) => {
-            const { data: sessionsAPI } = response;
-            console.log(sessionsAPI);
+            const { data: sessionsAPI } = response; 
             setSession({...sessionsAPI});
         })
         .catch((error) => console.log("Error " + error.response.status));
     }, []);
         
-    function validateSeat(seatNumber){
-        if(session.seats[seatNumber - 1].isAvailable){
-            console.log("disponivel");
-        }else{
-            console.log("nao disponivel");
-        }
-    }
-
     return (
         <>
             <main className="Seats" >
@@ -59,15 +49,10 @@ export default function Seats() {
                 <section className="seats">
                     {
                         session.seats.map(seat => {
-                            console.log(seat.isAvailable)
                             return (
-                                    <button
-                                        key={seat.id}
-                                        className={`seat ${seat.isAvailable ? "available" : "unavailable"}`}
-                                        onClick={() => validateSeat(seat.name)}
-                                    >
-                                            <h3>{seat.name}</h3>
-                                    </button>
+                                <div key={seat.id} >
+                                    <Seat isAvailable={seat.isAvailable} id={seat.id} name={seat.name} />
+                                </div>
                             );
                         })
                     }
@@ -80,9 +65,9 @@ export default function Seats() {
                 <section className="client-infos">
                     <form action="">
                         <label htmlFor="">Nome do comprador: </label>
-                        <input type="text" />
+                        <input type="text" required />
                         <label htmlFor="">CPF do comprador: </label>
-                        <input type="text" />
+                        <input type="text" required />
                         <button>Reservar assento(s)</button>
                     </form>
                 </section>
@@ -92,3 +77,46 @@ export default function Seats() {
         </>
     );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+//         <button
+//             key={seat.id}
+//             className={
+//                 `seat
+//                 ${seat.isAvailable ? "available" : "unavailable"}
+//                 ${seatStatus}
+//             `}
+//             onClick={() => validateSeat(seat.name, seat.isAvailable)}
+//         >
+//                 <h3>{seat.name}</h3>
+//         </button>
+
+
+
+
+// function validateSeat(seatNumber, available){
+//     if(available && seatStatus !== "selected"){
+//         setSeatStatus("selected");
+//     }else{
+        
+//     }
+
+
+//     // if(session.seats[seatNumber - 1].isAvailable){
+//     //     console.log("disponivel");
+//     //     // setSeatSelected(true);
+//     //     return true
+//     // }else{
+//     //     console.log("nao disponivel");
+//     // }
+// }

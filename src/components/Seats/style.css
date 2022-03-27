@@ -45,3 +45,7 @@
 .Seats .unavailable{
     background-color: #F7C52B;
 }
+
+.Seats .selected{
+    background-color: #45BDB0;
+}
