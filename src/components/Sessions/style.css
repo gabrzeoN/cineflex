@@ -24,11 +24,11 @@
     color: var(--main-font);
 }
 
-.Sessions .times{
+.Sessions .sessions{
     display:  flex;
 }
 
-.Sessions .times button{
+.Sessions .sessions button{
     width: 83px;
     height: 43px;
     background: var(--time-button);
@@ -43,6 +43,6 @@
     margin-right: 10px;
 }
 
-.Sessions .times button:hover{
+.Sessions .sessions button:hover{
     background: var(--time-button-hover);
 }

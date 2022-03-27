@@ -1,0 +1,47 @@
+.Seats{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding: 0px 24px; */
+}
+
+.Seats h2{
+    font-size: 24px;
+    margin: 40px 0px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.04em;
+    color: var(--main-font);
+}
+
+.Seats .seats{
+    width: 330px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.Seats .seat{
+    width: 26px;
+    height: 26px;
+    background-color: blue;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.Seats h3{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+
+.Seats .available{
+    background-color: #808F9D;
+}
+
+.Seats .unavailable{
+    background-color: #F7C52B;
+}

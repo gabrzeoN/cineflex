@@ -34,7 +34,6 @@ export default function Sessions(){
         axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/movies/${idFilme}/showtimes`)
         .then(response => {
             const { data: movieAPI } = response;
-            console.log(movieAPI)
             setMovie({...movieAPI});
         })
         .catch((error) => console.log("Error " + error.response.status));
@@ -49,11 +48,11 @@ export default function Sessions(){
                         return (
                             <div key={day.id} className="day" >
                                 <p>{day.weekday} - {day.date}</p>
-                                <div className="times">
+                                <div className="sessions">
                                     {
                                         day.showtimes.map(time => {
                                             return (
-                                                <Link key={time.id} to="" >
+                                                <Link key={time.id} to={`/assentos/${time.id}`} >
                                                         <button>{time.name}</button>
                                                 </Link>
                                             )
