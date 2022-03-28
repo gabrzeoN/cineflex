@@ -1,14 +1,16 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
 import Seat from "../Seat";
 import Footer from "../Footer";
 import "./style.css";
 
 export default function Seats() {
+    const navigate = useNavigate();
     const { idSessao } = useParams();
-
+    const [seatsSelected, setSeatsSelected] = useState([]);
+    const [clientInformation, setClientInformation] = useState({ids: [], name: "", cpf: ""});
     const [session, setSession] = useState({
         id: 0,
         name: "",
@@ -42,6 +44,20 @@ export default function Seats() {
         .catch((error) => console.log("Error " + error.response.status));
     }, []);
         
+    function closeOrder(event){
+        event.preventDefault();
+        console.log({...clientInformation, ids: [...seatsSelected]})
+        axios.post("https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many", {...clientInformation, ids: [...seatsSelected]})
+        .then(response => {
+            console.log("na api")
+            return (
+                navigate('/sucesso')
+            );
+        })
+        .catch(error => console.log(error.response.status));
+        console.log(clientInformation);
+    }
+
     return (
         <>
             <main className="Seats" >
@@ -51,7 +67,7 @@ export default function Seats() {
                         session.seats.map(seat => {
                             return (
                                 <div key={seat.id} >
-                                    <Seat isAvailable={seat.isAvailable} id={seat.id} name={seat.name} />
+                                    <Seat isAvailable={seat.isAvailable} id={seat.id} name={seat.name} setSeatsSelected={setSeatsSelected} seatsSelected={seatsSelected} />
                                 </div>
                             );
                         })
@@ -62,13 +78,29 @@ export default function Seats() {
                     <div className="seat" ></div>
                     <div className="seat" ></div>
                 </section>
+
                 <section className="client-infos">
-                    <form action="">
+                    <form action="" onSubmit={closeOrder}>
                         <label htmlFor="">Nome do comprador: </label>
-                        <input type="text" required />
+                        <input 
+                            required
+                            type="text" 
+                            onChange={(event) => 
+                                setClientInformation({...clientInformation, name: event.target.value})
+                            }
+                        />
+                        
                         <label htmlFor="">CPF do comprador: </label>
-                        <input type="text" required />
-                        <button>Reservar assento(s)</button>
+                        <input 
+                            type="text" 
+                            required 
+                            onChange={(event) => 
+                                setClientInformation({...clientInformation, cpf: event.target.value})
+                            }    
+                        />
+                        {/* <Link to={`/sucesso`}> */}
+                            <button type="submit">Reservar assento(s)</button>
+                        {/* </Link> */}
                     </form>
                 </section>
             </main>

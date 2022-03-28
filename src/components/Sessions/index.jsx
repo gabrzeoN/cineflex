@@ -27,8 +27,6 @@ export default function Sessions(){
             },
         ]
     });
-    // const {id, title, posterURL} = movie;
-    // const {}
 
     useEffect(() => {
         axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/movies/${idFilme}/showtimes`)
