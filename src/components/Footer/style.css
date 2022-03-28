@@ -16,7 +16,7 @@
     color: var(--footer-font);
 }
 
-.Footer div{
+.Footer .poster{
     background-color: var(--footer-img);
     width: 64px;
     height: 89px;

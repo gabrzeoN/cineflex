@@ -1,0 +1,70 @@
+.Success{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Success h2{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #247A6B;
+    margin: auto;
+    padding: 0px 100px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.Success section{
+    margin: 30px;
+}
+
+.Success h3{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.04em;
+    color: #293845;
+    margin-bottom: 10px;
+}
+
+.Success p,
+.Success li{
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.04em;
+    color: #293845;
+}
+
+.Success .button{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Success button{
+    background: #E8833A;
+    border-radius: 3px;
+    border: 0px;
+    width: 225px;
+    height: 42px;
+
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+    margin-top: 70px;
+}

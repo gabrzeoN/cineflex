@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* padding: 0px 24px; */
+    position: relative;
 }
 
 .Seats h2{
@@ -18,7 +18,7 @@
 }
 
 .Seats .seats{
-    width: 330px;
+    width: 380px;
     display: grid;
     flex-wrap: wrap;
     justify-content: center;
@@ -30,7 +30,6 @@
 .Seats .seat{
     width: 26px;
     height: 26px;
-    background-color: blue;
     border-radius: 50%;
     margin: 5px;
 }
@@ -39,16 +38,101 @@
     display: flex;
     justify-self: center;
     align-items: center;
+
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: 0.04em;  
+    color: #000000;
 }
 
 .Seats .available{
-    background-color: #808F9D;
+    background-color: #C3CFD9;
+    border: 1px solid #808F9D;
 }
 
 .Seats .unavailable{
-    background-color: #F7C52B;
+    background-color: #FBE192;
+    border: 1px solid #F7C52B;
 }
 
 .Seats .selected{
-    background-color: #45BDB0;
+    background-color: #8DD7CF;
+    border: 1px solid #45BDB0;
+}
+
+.Seats .caption{
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.Seats p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+
+    font-size: 13px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.013em;
+
+    color: #4E5A65;
+}
+
+.Seats .client-infos{
+    align-items: center;
+    width: 380px;
+    margin-top: 60px;
+}
+
+.Seats .client-infos form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    color: #293845;
+    
+}
+
+.Seats .client-infos input{
+    width: 380px;
+    height: 50px;
+    margin: 10px 0px;
+    border: 1px solid #D5D5D5;
+    border-radius: 3px;
+    font-size: 18px;
+    line-height: 21px;
+    padding-left: 15px;
+    font-style: italic;
+}
+
+.Seats .client-infos button{
+    height: 45px;
+    width: 225px;
+    margin-top: 40px;
+    background: #E8833A;
+    border-radius: 3px;
+
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.04em;
+    border: 0px;
+    color: #FFFFFF;
+}
+
+.Seats .client-infos form div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
