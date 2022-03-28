@@ -1,7 +1,6 @@
 import "./style.css";
 
 export default function Footer({posterURL, title, weekday, time}){
-
         return (
             <footer className="Footer" >            
                 <div className="poster">

@@ -52,8 +52,6 @@ export default function Seats() {
         }else{
             axios.post("https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many", {...clientInformation, ids: [...seatsSelected]})
             .then(response => {
-                const seats = [clientInformation.ids]
-                console.log(seatsSelectedName);
                 const bookingInformation = {
                     movie: {
                         title: session.movie.title,
@@ -120,7 +118,7 @@ export default function Seats() {
                             type="text" 
                             pattern="[0-9]+"
                             title="Deve conter somente números"
-                            minLength="11" // 12345678911
+                            minLength="11"
                             maxLength="11"
                             onChange={(event) => 
                                 setClientInformation({...clientInformation, cpf: event.target.value})
@@ -132,7 +130,7 @@ export default function Seats() {
                     </form>
                 </section>
             </main>
-            
+        
             <Footer 
                 posterURL={session.movie.posterURL} 
                 title={session.movie.title} 

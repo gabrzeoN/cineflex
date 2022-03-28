@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    margin-bottom: 170px;
 }
 
 .Seats h2{
@@ -79,7 +80,6 @@
     display: flex;
     align-items: center;
     letter-spacing: -0.013em;
-
     color: #4E5A65;
 }
 

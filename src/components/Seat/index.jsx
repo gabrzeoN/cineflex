@@ -1,11 +1,9 @@
 import { useState } from "react";
-import "./style.css";
 
 export default function Seat({isAvailable, name, id, setSeatsSelected, seatsSelected, setSeatsSelectedName, seatsSelectedName}){
     const [seatSelected, setSeatSelected] = useState("");
 
     function validateSeat(seatIsAvailable){
-    
         if(seatIsAvailable && !seatSelected){
             setSeatSelected("selected");
             setSeatsSelected([...seatsSelected, id])
