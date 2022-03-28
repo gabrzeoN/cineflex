@@ -49,12 +49,24 @@ export default function Seats() {
         console.log({...clientInformation, ids: [...seatsSelected]})
         axios.post("https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many", {...clientInformation, ids: [...seatsSelected]})
         .then(response => {
-            console.log("na api")
+            const bookingInformation = {
+                movie: {
+                    title: "v",
+                    day: "s",
+                    time: "s"
+                },
+                seats: [],
+                clientInformation: {
+                    name: "a",
+                    cpf: "a"
+                }
+            };
+
             return (
-                navigate('/sucesso')
+                navigate('/sucesso', {state: bookingInformation})
             );
         })
-        .catch(error => console.log(error.response.status));
+        .catch((error) => console.log("Error " + error.response.status));
         console.log(clientInformation);
     }
 

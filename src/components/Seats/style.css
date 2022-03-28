@@ -19,9 +19,12 @@
 
 .Seats .seats{
     width: 330px;
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 0.5rem 0.2rem;
 }
 
 .Seats .seat{
